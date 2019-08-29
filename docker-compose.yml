@@ -1,0 +1,20 @@
+version: '2.1'
+
+services:
+  wgpt_cd:
+    build: .
+    environment:
+      FLASK_APP: wgpt_cd.py
+      DATABASE_URL: "mysql+pymysql://wgpt:wgptpassword@db/wgpt"
+#      TCP_WAIT: "db 3306"
+    volumes:
+      - ./config.py:/wgpt/config.py
+
+  webserver:
+    image: nginx:alpine
+    ports:
+      - "2443:2443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./certs:/certs
+    command: ["nginx", "-g", "daemon off;"]
