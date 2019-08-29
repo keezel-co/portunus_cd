@@ -1,7 +1,7 @@
 # cableguard_cd
 This tool requires Cableguard API - https://github.com/keezel-co/cableguard_api
 
-#Cableguard Config Deliverer - Wireguard provisioning tool
+# Cableguard Config Deliverer - Wireguard provisioning tool
 Cableguard is a set of tools that make it easy to deploy and manage Wireguard servers and clients at scale.
 This `cableguard_cd` repository contains the `Config Deliverer` for `cableguard_api`. This is a stripped down
 version of `cableguard_api` that only allows calls to `GET` a config for a server (if the correct server token is presented)
